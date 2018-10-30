@@ -9,8 +9,8 @@ from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 
-app.config['MONGO_DBNAME'] = 'george'
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/george'
+app.config['MONGO_DBNAME'] = 'newsaggregartor'
+app.config['MONGO_URI'] = 'mongodb://gnr011:Kalash1@ds040309.mlab.com:40309/newsaggregartor'
 
 mongo = PyMongo(app)
 
