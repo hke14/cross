@@ -21,7 +21,7 @@ def get_all_stars():
   star = mongo.db.articles
   output = []
   for s in star.find():
-    output.append({'title' : s['title'], 'date': s['date_str'], 'art_content': s['art_content']})
+    output.append({'title' : s['title'], 'date': s['date_str'], 'art_content': s['art_content'], 'url': s['url'], 'pic': s['pic']})
   return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
 @app.route('/bull')
