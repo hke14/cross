@@ -2,97 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="817210be-13af-42d4-983a-3b793c3b2cd8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Cross.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2018-10-29T043306.200.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/bin/activate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/bin/activate.csh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/bin/activate.fish" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/bin/gunicorn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/bin/gunicorn_paster" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/bin/python" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/bin/python3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/DESCRIPTION.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_gunicorn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/_version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/test_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/test_gridfs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/test_url_converter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/test_wrappers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/wrappers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/_compat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/app/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/app/pasterapp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/arbiter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/argparse_compat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/debug.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/glogging.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/_sendfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/body.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/message.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/unreader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/instrument/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/instrument/statsd.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/pidfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/reloader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/selectors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/six.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/sock.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/systemd.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/_gaiohttp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/base_async.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/gaiohttp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/geventlet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/ggevent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/gthread.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/gtornado.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/sync.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/workertmp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib64" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -331,10 +241,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1032" extended-state="6" />
-    <editor active="true" />
+    <frame x="960" y="0" width="960" height="1032" extended-state="4" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2529349" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.51859957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
