@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="817210be-13af-42d4-983a-3b793c3b2cd8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Cross.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2018-10-29T043306.200.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/activate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/activate.csh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/activate.fish" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/gunicorn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/gunicorn_paster" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/python" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/python3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/DESCRIPTION.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/entry_points.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_Gunicorn-0.1.1.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Flask_PyMongo-2.1.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_gunicorn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/_version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/test_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/test_gridfs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/test_url_converter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/test_wrappers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/tests/util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_pymongo/wrappers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/entry_points.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn-19.9.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/_compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/app/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/app/pasterapp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/arbiter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/argparse_compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/debug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/errors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/glogging.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/_sendfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/body.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/errors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/unreader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/http/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/instrument/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/instrument/statsd.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/pidfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/reloader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/selectors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/six.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/sock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/systemd.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/_gaiohttp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/base_async.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/gaiohttp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/geventlet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/ggevent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/gthread.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/gtornado.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/sync.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/gunicorn/workers/workertmp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib64" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Cross$Cross.coverage" NAME="Cross Coverage Results" MODIFIED="1540824074669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1457850426">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="1" />
+          <entry key="py" value="460" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="460" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#12#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="18" lean-forward="true" selection-end-line="55" />
+              <folding>
+                <element signature="e#12#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wsgi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Flask Main" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/wsgi.py" />
+        <option value="$PROJECT_DIR$/mongol.py" />
+        <option value="$PROJECT_DIR$/mongo.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="960" />
+    <option name="width" value="960" />
+    <option name="height" value="1032" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Cross" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cross" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://127.0.0.1:5000" />
+          <option name="urlPath" value="/star" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Cross" type="Python.FlaskServer" factoryName="Flask server">
+      <module name="Cross" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="817210be-13af-42d4-983a-3b793c3b2cd8" name="Default Changelist" comment="" />
+      <created>1540806303557</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540806303557</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1032" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2529349" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289183" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289183" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32964602" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="REST Client" order="10" weight="0.3432671" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32853982" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.32977587" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.56892776" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mongol.py" />
+    <entry file="file://$PROJECT_DIR$/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="18" lean-forward="true" selection-end-line="55" />
+          <folding>
+            <element signature="e#12#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#12#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

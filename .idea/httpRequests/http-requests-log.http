@@ -1,0 +1,14 @@
+GET http://127.0.0.1:5000/star
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-29T043306.200.html
+
+###
+
+GET http://0.0.0.0:5000/star
+Accept: */*
+Cache-Control: no-cache
+
+###
+
