@@ -1,20 +1,28 @@
 # mongo.py
 
-from flask import Flask, make_response
+import json
+from flask import Flask
 from flask import jsonify
 from flask import request
-import json
+from flask_cors import CORS, cross_origin
 from flask_pymongo import PyMongo
-
 
 app = Flask(__name__)
 
+cors = CORS(app)
+
 app.config['MONGO_DBNAME'] = 'newsaggregartor'
 app.config['MONGO_URI'] = 'mongodb://gnr011:Kalash1@ds040309.mlab.com:40309/newsaggregartor'
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 mongo = PyMongo(app)
 
+@app.route("/")
 
+@cross_origin()
+
+def helloWorld():
+  return "Hello, cross-origin-world!"
 
 @app.route('/star', methods=['GET'])
 def get_all_stars():
