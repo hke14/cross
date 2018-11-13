@@ -27,6 +27,66 @@ def get_all_stars():
   return jsonify(output)
   #return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
+@app.route('/middle-east', methods=['GET'])
+def get_all_middle_east():
+  star = mongo.db.articles
+  output = []
+  for s in star.find({'categorie':'middle-east'}):
+    output.append({'title': s['title'], 'date': s['date_str'], 'art_content': s['art_content'], 'url': s['url'], 'pic': s['pic'], 'tag': s['tag'], 'tagu': s['tagu']})
+  return jsonify(output)
+  #return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+@app.route('/world', methods=['GET'])
+def get_all_world():
+  star = mongo.db.articles
+  output = []
+  for s in star.find({'categorie':'world'}):
+    output.append({'title': s['title'], 'date': s['date_str'], 'art_content': s['art_content'], 'url': s['url'], 'pic': s['pic'], 'tag': s['tag'], 'tagu': s['tagu']})
+  return jsonify(output)
+  #return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+@app.route('/sport', methods=['GET'])
+def get_all_sport():
+  star = mongo.db.articles
+  output = []
+  for s in star.find({'categorie':'sport'}):
+    output.append({'title': s['title'], 'date': s['date_str'], 'art_content': s['art_content'], 'url': s['url'], 'pic': s['pic'], 'tag': s['tag'], 'tagu': s['tagu']})
+  return jsonify(output)
+  #return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+@app.route('/tech', methods=['GET'])
+def get_all_tech():
+  star = mongo.db.articles
+  output = []
+  for s in star.find({'categorie':'tech'}):
+    output.append({'title': s['title'], 'date': s['date_str'], 'art_content': s['art_content'], 'url': s['url'], 'pic': s['pic'], 'tag': s['tag'], 'tagu': s['tagu']})
+  return jsonify(output)
+  #return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+@app.route('/business', methods=['GET'])
+def get_all_business():
+  star = mongo.db.articles
+  output = []
+  for s in star.find({'categorie':'business'}):
+    output.append({'title': s['title'], 'date': s['date_str'], 'art_content': s['art_content'], 'url': s['url'], 'pic': s['pic'], 'tag': s['tag'], 'tagu': s['tagu']})
+  return jsonify(output)
+  #return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+@app.route('/random', methods=['GET'])
+def get_five_random():
+  star = mongo.db.articles
+  output = []
+  for s in star.aggregate([{'$sample': {'size': 5 }}]):
+    output.append({'title': s['title'], 'date': s['date_str'], 'art_content': s['art_content'], 'url': s['url'], 'pic': s['pic'], 'tag': s['tag'], 'tagu': s['tagu']})
+  return jsonify(output)
+  #return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+
+
+
+
+
+
 @app.route('/bull')
 def add():
     user = mongo.db.users
