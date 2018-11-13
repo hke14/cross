@@ -6,6 +6,8 @@ from flask import jsonify
 from flask import request
 from flask_cors import CORS, cross_origin
 from flask_pymongo import PyMongo
+from flask import abort
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
@@ -17,13 +19,15 @@ app.config['MONGO_URI'] = 'mongodb://gnr011:Kalash1@ds040309.mlab.com:40309/news
 mongo = PyMongo(app)
 
 
+
 @app.route("/")
 @app.route('/star', methods=['GET'])
 def get_all_stars():
     star = mongo.db.articles
     output = []
     for s in star.find():
-        output.append({'title': s['title'],
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
                        'date': s['date_str'],
                        'art_content': s['art_content'],
                        'url': s['url'],
@@ -41,7 +45,8 @@ def get_all_middle_east():
     star = mongo.db.articles
     output = []
     for s in star.find({'categorie': 'middle-east'}):
-        output.append({'title': s['title'],
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
                        'date': s['date_str'],
                        'art_content': s['art_content'],
                        'url': s['url'],
@@ -59,7 +64,8 @@ def get_all_world():
     star = mongo.db.articles
     output = []
     for s in star.find({'categorie': 'world'}):
-        output.append({'title': s['title'],
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
                        'date': s['date_str'],
                        'art_content': s['art_content'],
                        'url': s['url'],
@@ -77,7 +83,8 @@ def get_all_sport():
     star = mongo.db.articles
     output = []
     for s in star.find({'categorie': 'sport'}):
-        output.append({'title': s['title'],
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
                        'date': s['date_str'],
                        'art_content': s['art_content'],
                        'url': s['url'],
@@ -95,7 +102,8 @@ def get_all_tech():
     star = mongo.db.articles
     output = []
     for s in star.find({'categorie': 'tech'}):
-        output.append({'title': s['title'],
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
                        'date': s['date_str'],
                        'art_content': s['art_content'],
                        'url': s['url'],
@@ -113,7 +121,8 @@ def get_all_business():
     star = mongo.db.articles
     output = []
     for s in star.find({'categorie': 'business'}):
-        output.append({'title': s['title'],
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
                        'date': s['date_str'],
                        'art_content': s['art_content'],
                        'url': s['url'],
@@ -131,7 +140,8 @@ def get_five_random():
     star = mongo.db.articles
     output = []
     for s in star.aggregate([{'$sample': {'size': 10}}]):
-        output.append({'title': s['title'],
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
                        'date': s['date_str'],
                        'art_content': s['art_content'],
                        'url': s['url'],
@@ -156,7 +166,34 @@ def get_opposing():
     # return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
 
-@app.route('/getopposing', methods=['GET'])
+@app.route('/getarticle', methods=['POST'])
+def get_article():
+    articles =[]
+    if not request.json or not 'id' in request.json:
+        abort(400)
+    article = {
+        'id': request.json['id']
+    }
+    articles.append(article)
+    article = json.dumps(article)
+    data = json.loads(article)
+    id = data['id']
+
+    star = mongo.db.articles
+    output = []
+    for s in star.find({'_id': ObjectId(id)}):
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
+                       'date': s['date_str'],
+                       'art_content': s['art_content'],
+                       'url': s['url'],
+                       'pic': s['pic'],
+                       'tag': s['tag'],
+                       'tagu': s['tagu'],
+                       'keywords': s['keywords'],
+                       'score': s['score']})
+    return jsonify(output)
+
 
 @app.route('/bull')
 def add():
