@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route('/star', methods=['GET'])
 def get_all_stars():
-    star = mongo.db.articles
+    star = mongo.db.world
     output = []
     for s in star.find():
         output.append({'id': str(s['_id']),
@@ -42,7 +42,7 @@ def get_all_stars():
 
 @app.route('/middle-east', methods=['GET'])
 def get_all_middle_east():
-    star = mongo.db.articles
+    star = mongo.db.world
     output = []
     for s in star.find({'categorie': 'middle-east'}):
         output.append({'id': str(s['_id']),
@@ -61,7 +61,7 @@ def get_all_middle_east():
 
 @app.route('/world', methods=['GET'])
 def get_all_world():
-    star = mongo.db.articles
+    star = mongo.db.world
     output = []
     for s in star.find({'categorie': 'world'}):
         output.append({'id': str(s['_id']),
@@ -80,7 +80,7 @@ def get_all_world():
 
 @app.route('/sport', methods=['GET'])
 def get_all_sport():
-    star = mongo.db.articles
+    star = mongo.db.world
     output = []
     for s in star.find({'categorie': 'sport'}):
         output.append({'id': str(s['_id']),
@@ -99,7 +99,7 @@ def get_all_sport():
 
 @app.route('/tech', methods=['GET'])
 def get_all_tech():
-    star = mongo.db.articles
+    star = mongo.db.world
     output = []
     for s in star.find({'categorie': 'tech'}):
         output.append({'id': str(s['_id']),
@@ -118,7 +118,7 @@ def get_all_tech():
 
 @app.route('/business', methods=['GET'])
 def get_all_business():
-    star = mongo.db.articles
+    star = mongo.db.world
     output = []
     for s in star.find({'categorie': 'business'}):
         output.append({'id': str(s['_id']),
@@ -137,7 +137,7 @@ def get_all_business():
 
 @app.route('/random', methods=['GET'])
 def get_five_random():
-    star = mongo.db.articles
+    star = mongo.db.world
     output = []
     for s in star.aggregate([{'$sample': {'size': 10}}]):
         output.append({'id': str(s['_id']),
@@ -156,7 +156,7 @@ def get_five_random():
 
 @app.route('/Keywords', methods=['GET'])
 def get_opposing():
-    star = mongo.db.articles
+    star = mongo.db.world
     art_title = request.args.get('title')
     output = []
     for s in star.find({'title': art_title}):
@@ -179,7 +179,7 @@ def get_article():
     data = json.loads(article)
     id = data['id']
 
-    star = mongo.db.articles
+    star = mongo.db.world
     output = []
     for s in star.find({'_id': ObjectId(id)}):
         output.append({'id': str(s['_id']),
