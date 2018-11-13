@@ -130,7 +130,7 @@ def get_all_business():
 def get_five_random():
     star = mongo.db.articles
     output = []
-    for s in star.aggregate([{'$sample': {'size': 5}}]):
+    for s in star.aggregate([{'$sample': {'size': 10}}]):
         output.append({'title': s['title'],
                        'date': s['date_str'],
                        'art_content': s['art_content'],
