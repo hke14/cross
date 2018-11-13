@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route('/star', methods=['GET'])
 def get_all_stars():
-    star = mongo.db.world
+    star = mongo.db.articles
     output = []
     for s in star.find():
         output.append({'id': str(s['_id']),
@@ -137,7 +137,7 @@ def get_all_business():
 
 @app.route('/random', methods=['GET'])
 def get_five_random():
-    star = mongo.db.world
+    star = mongo.db.articles
     output = []
     for s in star.aggregate([{'$sample': {'size': 10}}]):
         output.append({'id': str(s['_id']),
