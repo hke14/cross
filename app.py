@@ -220,6 +220,29 @@ def get_all():
     return jsonify(output)
 
 
+@app.route('/trial', methods=['GET'])
+def trial():
+    collection = """
+    {  
+   "results":[  
+      {  
+         "title":"Result Title",
+         "url":"/optional/url/on/click",
+         "image":"optional-image.jpg",
+         "price":"Optional Price",
+         "description":"Optional Description"
+      },
+      {  
+         "title":"Result Title",
+         "description":"Result Description"
+      }
+   ]
+}
+    """
+    collection = json.dumps(collection, indent=4,sort_keys=True)
+    collection = json.loads(collection)
+
+    return collection
 
 if __name__ == '__main__':
     app.run(debug=True)
@@ -234,4 +257,3 @@ def add_star():
     new_star = star.find_one({'_id': star_id})
     output = {'name': new_star['name'], 'distance': new_star['distance']}
     return jsonify({'result': output})
-
