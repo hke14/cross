@@ -6,6 +6,7 @@ from flask import request
 import json
 from flask_pymongo import PyMongo
 from gevent import monkey
+
 monkey.patch_all()
 
 
@@ -31,6 +32,7 @@ def add():
     user = mongo.db.users
     user.insert_one({'name' : 'Anthony'})
     return 'Added user'
+
 if __name__ == '__main__':
     app.run(debug=True)
 

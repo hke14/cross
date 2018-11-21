@@ -8,6 +8,8 @@ from flask_cors import CORS, cross_origin
 from flask_pymongo import PyMongo
 from flask import abort
 from bson.objectid import ObjectId
+import re
+
 
 app = Flask(__name__)
 
@@ -15,6 +17,8 @@ CORS(app)
 
 app.config['MONGO_DBNAME'] = 'newsaggregartor'
 app.config['MONGO_URI'] = 'mongodb://gnr011:Kalash1@ds040309.mlab.com:40309/newsaggregartor'
+app.config['JSON_SORT_KEYS'] = False
+
 
 mongo = PyMongo(app)
 
@@ -239,10 +243,29 @@ def trial():
    ]
 }
     """
-    collection = json.dumps(collection, indent=4,sort_keys=True)
+    collection = json.dumps(collection, indent=4, sort_keys=True)
     collection = json.loads(collection)
 
     return collection
+
+
+@app.route('/search', methods=['GET'])
+def search():
+    query = request.args.get('q')
+    collection = mongo.db.articles
+    out = []
+    rgx = re.compile('.*' + query + '.*', re.IGNORECASE)  # compile the regex
+
+
+
+    for s in collection.find({"title": rgx}):
+        out.append({'title': s['title'],
+                    'url': s['url'],
+                    'image': s['pic']
+                     })
+
+    return jsonify({'result': out})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
