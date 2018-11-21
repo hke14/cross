@@ -19,7 +19,6 @@ app.config['MONGO_URI'] = 'mongodb://gnr011:Kalash1@ds040309.mlab.com:40309/news
 mongo = PyMongo(app)
 
 
-
 @app.route("/")
 @app.route('/star', methods=['GET'])
 def get_all_stars():
@@ -168,7 +167,7 @@ def get_opposing():
 
 @app.route('/getarticle', methods=['POST'])
 def get_article():
-    articles =[]
+    articles = []
     if not request.json or not 'id' in request.json:
         abort(400)
     article = {
@@ -202,6 +201,26 @@ def add():
     return 'Added user'
 
 
+@app.route('/gimme', methods=['GET'])
+def get_all():
+    collection = mongo.db.articles
+    out = []
+    for s in collection.find():
+        out.append({'id': str(s['_id']),
+                    'title': s['title'],
+                    'date': s['date_str'],
+                    'art_content': s['art_content'],
+                    'url': s['url'],
+                    'pic': s['pic'],
+                    'tag': s['tag'],
+                    'tagu': s['tagu'],
+                    'keywords': s['keywords'],
+                    'score': s['score']})
+    output = [{'items': out}]
+    return jsonify(output)
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
@@ -215,3 +234,4 @@ def add_star():
     new_star = star.find_one({'_id': star_id})
     output = {'name': new_star['name'], 'distance': new_star['distance']}
     return jsonify({'result': output})
+
