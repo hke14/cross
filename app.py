@@ -263,7 +263,7 @@ def search():
 
     out = """{"results":""" + out + "}"
 
-    out = out.replace('\\', '')
+    #out = out.replace('\\', '')
 
     out = json.dumps(out, indent=4)
     out = json.loads(out)
