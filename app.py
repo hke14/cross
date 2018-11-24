@@ -1,6 +1,8 @@
 # mongo.py
 
 import json
+import pymongo
+
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -10,7 +12,6 @@ from flask import abort
 from bson.objectid import ObjectId
 import re
 
-from odo.backends.tests.test_mongo import pymongo
 
 app = Flask(__name__)
 
