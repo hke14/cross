@@ -220,7 +220,6 @@ def get_all():
                     'tagu': s['tagu'],
                     'keywords': s['keywords'],
                     'score': s['score']})
-    output = [{'items': out}]
     return jsonify(output)
 
 
