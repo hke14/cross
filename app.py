@@ -280,7 +280,7 @@ def getKeywords():
         out.append({'keyword': (s['keyword']),
                     'frequency': (s['frequency'])
                     })
-    return jsonify(output)
+    return jsonify(out)
 
 
 if __name__ == '__main__':

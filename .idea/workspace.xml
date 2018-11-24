@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="817210be-13af-42d4-983a-3b793c3b2cd8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="817210be-13af-42d4-983a-3b793c3b2cd8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,11 +79,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="222" selection-start-line="222" selection-end-line="222" />
+            <state relative-caret-position="320">
+              <caret line="282" selection-start-line="282" selection-end-line="282" />
               <folding>
                 <element signature="e#12#23#0" expanded="true" />
-                <marker date="1543100756637" expanded="true" signature="8825:9143" ph="..." />
+                <marker date="1543100995361" expanded="true" signature="8855:9143" ph="..." />
               </folding>
             </state>
           </provider>
@@ -389,11 +387,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="222" selection-start-line="222" selection-end-line="222" />
+        <state relative-caret-position="320">
+          <caret line="282" selection-start-line="282" selection-end-line="282" />
           <folding>
             <element signature="e#12#23#0" expanded="true" />
-            <marker date="1543100756637" expanded="true" signature="8825:9143" ph="..." />
+            <marker date="1543100995361" expanded="true" signature="8855:9143" ph="..." />
           </folding>
         </state>
       </provider>
