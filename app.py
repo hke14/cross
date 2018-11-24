@@ -10,6 +10,8 @@ from flask import abort
 from bson.objectid import ObjectId
 import re
 
+from odo.backends.tests.test_mongo import pymongo
+
 app = Flask(__name__)
 
 CORS(app)
@@ -164,7 +166,6 @@ def get_opposing():
         output.append({'title': s['title'], 'keywords': s['keywords']})
     output_json = jsonify(output)
     return output_json
-    #return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
 
 @app.route('/getarticle', methods=['POST'])
@@ -225,7 +226,7 @@ def get_all():
 @app.route('/trial', methods=['GET'])
 def trial():
     collection = """
-    {  
+{  
    "results":[  
       {  
          "title":"Result Title",
@@ -269,6 +270,17 @@ def search():
     out = json.loads(out)
 
     return out
+
+@app.route('/getKeywords', methods=['GET'])
+def getKeywords():
+    collection = mongo.db.false_keywords
+    out = []
+    for s in collection.find().limit(20).sort([("frequency", pymongo.DESCENDING)]):
+        out.append({'keyword': (s['keyword']),
+                    'frequency': (s['frequency'])
+                    })
+    output = [{'items': out}]
+    return jsonify(output)
 
 
 if __name__ == '__main__':
