@@ -256,7 +256,7 @@ def search():
 
     for s in collection.find({"title": rgx}):
         out.append({"title": s['title'],
-                    "url": s['url'],
+                    "id": s['_id'],
                     "image": s['pic']
                     })
     out = str(json.dumps(out))
