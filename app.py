@@ -308,6 +308,33 @@ def searchKeywords():
                        'score': s['score']})
     return jsonify(output)
 
+@app.route('/getaltarticle', methods=['POST'])
+def get_alt_article():
+    articles = []
+    if not request.json or not 'id' in request.json:
+        abort(400)
+    article = {
+        'id': request.json['id']
+    }
+    articles.append(article)
+    article = json.dumps(article)
+    data = json.loads(article)
+    id = data['id']
+
+    star = mongo.db.false_articles
+    output = []
+    for s in star.find({'_id': ObjectId(id)}):
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
+                       'date': s['date_str'],
+                       'art_content': s['art_content'],
+                       'url': s['url'],
+                       'pic': s['pic'],
+                       'tag': s['tag'],
+                       'tagu': s['tagu'],
+                       'keywords': s['keywords'],
+                       'score': s['score']})
+    return jsonify(output)
 
 
 if __name__ == '__main__':
