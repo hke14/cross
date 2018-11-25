@@ -1,12 +1,9 @@
-# mongo.py
-
 import json
 import pymongo
-
 from flask import Flask
 from flask import jsonify
 from flask import request
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 from flask_pymongo import PyMongo
 from flask import abort
 from bson.objectid import ObjectId
@@ -25,6 +22,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+
 @app.route('/star', methods=['GET'])
 def get_all_stars():
     star = mongo.db.articles
@@ -297,7 +295,6 @@ def searchKeywords():
 
     collection = mongo.db.false_articles
     out = []
-    #terms = ("الأمير محمد بن سلمان", "العراق", "البحرين")
     for s in collection.find({"keywords": {"$in": keyword}}):
         out.append({"url": s['url']})
     return jsonify(out)
