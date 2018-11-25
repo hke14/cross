@@ -282,6 +282,27 @@ def getKeywords():
                     })
     return jsonify(out)
 
+@app.route('/searchKeywords', methods =['POST'])
+def searchKeywords():
+    articles = []
+    if not request.json or not 'keywords' in request.json:
+        abort(400)
+    article = {
+        'keywords': request.json['keywords']
+    }
+    articles.append(article)
+    article = json.dumps(article)
+    data = json.loads(article)
+    keyword = data['keywords']
+
+    collection = mongo.db.false_articles
+    out = []
+    #terms = ("الأمير محمد بن سلمان", "العراق", "البحرين")
+    for s in collection.find({"keywords": {"$in": keyword}}):
+        out.append({"url": s['url']})
+    return jsonify(out)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
