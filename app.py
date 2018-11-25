@@ -292,7 +292,7 @@ def searchKeywords():
     article = json.dumps(article)
     data = json.loads(article)
     keyword = data['keywords']
-
+    keyword = keyword.split(keyword)
     collection = mongo.db.false_articles
     out = []
     for s in collection.find({"keywords": {"$in": keyword}}):
