@@ -292,12 +292,21 @@ def searchKeywords():
     article = json.dumps(article)
     data = json.loads(article)
     keyword = data['keywords']
-    keyword = keyword.split(keyword)
+    keyword = keyword.split(',')
     collection = mongo.db.false_articles
-    out = []
+    output = []
     for s in collection.find({"keywords": {"$in": keyword}}):
-        out.append({"url": s['url']})
-    return jsonify(out)
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
+                       'date': s['date_str'],
+                       'art_content': s['art_content'],
+                       'url': s['url'],
+                       'pic': s['pic'],
+                       'tag': s['tag'],
+                       'tagu': s['tagu'],
+                       'keywords': s['keywords'],
+                       'score': s['score']})
+    return jsonify(output)
 
 
 
