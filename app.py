@@ -441,7 +441,7 @@ def get_countries():
         freq = s['frequency']
         val = 'قطر'
         val2 = 'الولايات المتحدة'
-        output.append({'mal': str(next(iter(countries))),
+        output.append({'mal': next(iter(countries)),
                        'sec': val,
                        'thr': val2})
 
