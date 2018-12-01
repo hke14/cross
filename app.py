@@ -447,7 +447,9 @@ def get_countries():
         output.append({'mal': countries[val],
                        'ror': countries[val2],
                        'sec': countries[val3]})
-
+        if word in countries:
+            res = "res"
+            output.append({'res': res})
         # if word in countries:
         #     output.append({'word': word,
         #                    'cunt': next(iter(countries))})
