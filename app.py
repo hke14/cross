@@ -396,7 +396,7 @@ def get_countries():
         if word in countries:
             output.append({#'country': countries[word],
                            'frequency': freq})
-    return jsonify(output)
+    return jsonify(countries)
 
 if __name__ == '__main__':
     app.run(debug=True)
