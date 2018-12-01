@@ -444,10 +444,10 @@ def get_countries():
         val2 = 'الولايات المتحدة'
         val3 = 'إيران'
 
-        output.append({'mal': countries[val],
+        output.append({'mal': val,
                        'nit': word,
-                       'ror': countries[val2],
-                       'sec': countries[val3]})
+                       'ror': val2,
+                       'sec': val3})
         try:
             output.append({'res': countries[word]})
         except KeyError:
