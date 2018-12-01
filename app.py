@@ -9,7 +9,6 @@ from flask import abort
 from bson.objectid import ObjectId
 import re
 
-
 app = Flask(__name__)
 
 CORS(app)
@@ -22,7 +21,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-
 @app.route('/star', methods=['GET'])
 def get_all_stars():
     star = mongo.db.articles
@@ -263,12 +261,13 @@ def search():
 
     out = """{"results":""" + out + "}"
 
-    #out = out.replace('\\', '')
+    # out = out.replace('\\', '')
 
     out = json.dumps(out, indent=4)
     out = json.loads(out)
 
     return out
+
 
 @app.route('/getKeywords', methods=['GET'])
 def getKeywords():
@@ -280,7 +279,8 @@ def getKeywords():
                     })
     return jsonify(out)
 
-@app.route('/searchKeywords', methods =['POST'])
+
+@app.route('/searchKeywords', methods=['POST'])
 def searchKeywords():
     articles = []
     if not request.json or not 'keywords' in request.json:
@@ -307,6 +307,7 @@ def searchKeywords():
                        'keywords': s['keywords'],
                        'score': s['score']})
     return jsonify(output)
+
 
 @app.route('/getaltarticle', methods=['POST'])
 def get_alt_article():
@@ -336,6 +337,65 @@ def get_alt_article():
                        'score': s['score']})
     return jsonify(output)
 
+
+@app.route('/addrel', methods=['GET'])
+def add_rel():
+    star = mongo.db.false_articles
+    star.update(
+        {},
+        {"$set": {"related_articles": []}},
+        upsert=True, multi=True
+    )
+    output = []
+    return jsonify(output)
+
+
+@app.route('/insertrel', methods=['GET'])
+def insert_rel():
+    star = mongo.db.false_articles
+    # the keywords and ids
+    key_id = []
+    # test
+    output = []
+    # the output
+    putout = []
+    for s in star.find():
+        key_id.append({'keywords': s['keywords'],
+                       'id': str(s['_id']),
+                       'title': s['title'],
+                       'url': s['url']})
+    for key in key_id:
+        keywords = key['keywords']
+        # list of titles
+        tits = []
+        for s in star.find({"keywords": {"$in": keywords}}):
+            url = s['url']
+            orig_url = key['url']
+            if url == orig_url:
+                continue
+            else:
+                tits.append(url)
+        putout.append({'orig_url': key['url'],
+                       'related_urls': tits})
+
+    return json.dumps({'result': putout}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+
+@app.route('/getCountries', methods=['GET'])
+def get_countries():
+    output = []
+    countries = {'أفغانستان': 'AF', 'الولايات المتحدة': 'US', 'جزر جوادلوب': 'GP', 'آيسلندا': 'IS', 'أثيوبيا': 'ET', 'أذربيجان': 'AZ', 'أراض فرنسية جنوبية': 'TF', 'أرمينيا': 'AM', 'أروبا': 'AW', 'أستراليا': 'AU', 'ألبانيا': 'AL', 'ألمانيا': 'DE', 'أنتاركتيكا': 'AQ', 'أنتيغوا/بربودا': 'AG', 'أنجويلا': 'AI', 'أندورا': 'AD', 'أندونيسيا': 'ID', 'أنغولا': 'AO', 'أورغواي': 'UY', 'أوزباكستان': 'UZ', 'أوغندا': 'UG', 'أوكرانيا': 'UA', 'أيرلندا': 'IE', 'إريتريا': 'ER', 'إسبانيا': 'ES', 'إكوادور': 'EC', 'إلسلفادور': 'SV', 'إيران': 'IR', 'إيطاليا': 'IT', 'استونيا': 'EE', 'الأرجنتين': 'AR', 'الأردن': 'JO', 'الإمارات العربية المتحدة': 'AE', 'الباهاماس': 'BS', 'البحرين': 'BH', 'البرازيل': 'BR', 'البرتغال': 'PT', 'البوسنة/الهرسك': 'BA', 'الجبل الأسو': 'ME', 'الجزائر': 'DZ', 'الجزر العذراء الأمريكي': 'VI', 'الجزر العذراء البريطانية': 'VG', 'الجمهورية التشيكية': 'CZ', 'الجمهورية الدومينيكية': 'DO', 'الدانمارك': 'DK', 'الرأس الأخضر': 'CV', 'السنغال': 'SN', 'السودان': 'SD', 'السويد': 'SE', 'الصحراء الغربية': 'EH', 'الصومال': 'SO', 'الصين': 'CN', 'العراق': 'IQ', 'الغابون': 'GA', 'الفليبين': 'PH', 'الكونغو': 'CG', 'الكويت': 'KW', 'المالديف': 'MV', 'المغرب': 'MA', 'المكسيك': 'MX', 'المملكة العربية السعودية': 'SA', 'المملكة المتحدة': 'GB', 'النرويج': 'NO', 'النمسا': 'AT', 'النيجر': 'NE', 'الهند': 'IN', 'اليابان': 'JP', 'اليمن': 'YE', 'اليونان': 'GR', 'بابوا غينيا الجديدة': 'PG', 'باراغواي': 'PY', 'باكستان': 'PK', 'بالاو': 'PW', 'بربادوس': 'BB', 'بروني': 'BN', 'بلجيكا': 'BE', 'بلغاريا': 'BG', 'بنغلاديش': 'BD', 'بنما': 'PA', 'بنين': 'BJ', 'بوتان': 'BT', 'بوتسوانا': 'BW', 'بورتوريكو': 'PR', 'بوركينا فاسو': 'BF', 'بوروندي': 'BI', 'بولندا': 'PL', 'بوليفيا': 'BO', 'بولينيزيا الفرنسية': 'PF', 'بيتكيرن': 'PN', 'بيرو': 'PE', 'بيليز': 'BZ', 'تايلندا': 'TH', 'تايوان': 'TW', 'تركمانستان': 'TM', 'تركيا': 'TR', 'ترينيداد وتوباغو': 'TT', 'تشاد': 'TD', 'تنزانيا': 'TZ', 'توغو': 'TG', 'توفالو': 'TV', 'توكلو': 'TK', 'تونس': 'TN', 'تونغا': 'TO', 'تيمور الشرقية': 'TL', 'جبل طارق': 'GI', 'جرينلاند': 'GL', 'جزر أولند': 'AX', 'جزر الأنتيل الهولندي': 'AN', 'جزر القمر': 'KM', 'جزر الولايات المتحدة الصغيرة': 'UM', 'جزر برمود': 'BM', 'جزر توركس/كايكوس': 'TC', 'جزر سليمان': 'SB', 'جزر فارو': 'FO', 'جزر فوكلاند(المالديف)': 'FK', 'جزر كايمان': 'KY', 'جزر كوك': 'CK', 'جزر كوكس(كيلينغ)': 'CC', 'جزر مارشال': 'MH', 'جزر ماريانا الشمالية': 'MP', 'جزيرة بوفيه': 'BV', 'جزيرة كريسماس': 'CX', 'جزيرة مان': 'IM', 'جزيرة نورفولك': 'NF', 'جزيرة هيرد/جزر ماكدونالد': 'HM', 'جمايكا': 'JM', 'جمهورية أفريقيا الوسطى': 'CF', 'جنوب أفريقيا': 'ZA', 'جوام': 'GU', 'جورجيا الجنوبية/جزر ساندويتش': 'GS', 'جيبوتي': 'DJ', 'جيرزي': 'JE', 'جيورجيا': 'GE', 'دولة مدينة الفاتيكان': 'VA', 'دومينيكا': 'DM', 'رواندا': 'RW', 'روسيا': 'RU', 'روسيا البيضاء': 'BY', 'رومانيا': 'RO', 'ريونيون': 'RE', 'زامبيا': 'ZM', 'زمبابوي': 'ZW', 'ساحل العاج': 'CI', 'ساموا': 'WS', 'ساموا الأمريكية': 'AS', 'سان مارينو': 'SM', 'سانت بارتليمي': 'BL', 'سانت بيير/ميكلون': 'PM', 'سانت فنسنت/الجرينادين': 'VC', 'سانت كيتس/نيفيس': 'KN', 'سانت لوسيا': 'LC', 'سانت مارتن': 'MF', 'سانت هيلانة': 'SH', 'سريلانكا': 'LK', 'سلوفاكيا': 'SK', 'سلوفينيا': 'SI', 'سنغافورة': 'SG', 'سوازيلند': 'SZ', 'سورية': 'SY', 'سورينام': 'SR', 'سويسرا': 'CH', 'سيراليون': 'SL', 'سيشيل': 'SC', 'شيلي': 'CL', 'صربيا': 'RS', 'طاجيكستان': 'TJ', 'عُمان': 'OM', 'غامبيا': 'GM', 'غانا': 'GH', 'غرينادا': 'GD', 'غواتيمال': 'GT', 'غويانا الفرنسية': 'GF', 'غيانا': 'GY', 'غيرنزي': 'GG', 'غينيا': 'GN', 'غينيا الاستوائي': 'GQ', 'غينيا-بيساو': 'GW', 'فانواتو': 'VU', 'فرنسا': 'FR', 'فلسطين': 'PS', 'فنزويلا': 'VE', 'فنلندا': 'FI', 'فيتنام': 'VN', 'فيجي': 'FJ', 'قبرص': 'CY', 'قطر': 'QA', 'قيرغيزستان': 'KG', 'كازاخستان': 'KZ', 'كاليدونيا الجديدة': 'NC', 'كاميرون': 'CM', 'كرواتيا': 'HR', 'كمبوديا': 'KH', 'كندا': 'CA', 'كوبا': 'CU', 'كوريا الجنوبية': 'KR', 'كوريا الشمالية': 'KP', 'كوستاريكا': 'CR', 'كولومبيا': 'CO', 'كيريباتي': 'KI', 'كينيا': 'KE', 'لاتفيا': 'LV', 'لاوس': 'LA', 'لبنان': 'LB', 'لتوانيا': 'LT', 'لوكسمبورغ': 'LU', 'ليبيا': 'LY', 'ليبيريا': 'LR', 'ليختنشتين': 'LI', 'ليسوتو': 'LS', 'مارتينيك': 'MQ', 'ماكاو': 'MO', 'مالاوي': 'MW', 'مالطا': 'MT', 'مالي': 'ML', 'ماليزيا': 'MY', 'مايوت': 'YT', 'مدغشقر': 'MG', 'مصر': 'EG', 'مقدونيا': 'MK', 'منغوليا': 'MN', 'موريتانيا': 'MR', 'موريشيوس': 'MU', 'موزمبيق': 'MZ', 'مولدافيا': 'MD', 'موناكو': 'MC', 'مونتسيرات': 'MS', 'ميانمار': 'MM', 'ميكرونيسيا': 'FM', 'ناميبيا': 'NA', 'ناورو': 'NR', 'نيبال': 'NP', 'نيجيريا': 'NG', 'نيكاراجوا': 'NI', 'نيوزيلندا': 'NZ', 'نييوي': 'NU', 'هايتي': 'HT', 'هندوراس': 'HN', 'هنغاريا': 'HU', 'هولندا': 'NL', 'هونغ كونغ': 'HK'}
+    star = mongo.db.false_keywords
+    for s in star.find():
+        word = s['keyword']
+        freq = s['frequency']
+        try:
+            code = countries[word]
+        except KeyError:
+            continue
+        output.append({'country': code,
+                       'frequency': freq})
+    return jsonify(output)
 
 if __name__ == '__main__':
     app.run(debug=True)
