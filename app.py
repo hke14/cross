@@ -399,7 +399,7 @@ def get_countries():
             continue
         output.append({'country': code,
                        'frequency': freq})
-    return jsonify(output)
+    return jsonify(countries)
 
 if __name__ == '__main__':
     app.run(debug=True)
