@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="817210be-13af-42d4-983a-3b793c3b2cd8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -84,11 +83,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="447" column="54" lean-forward="true" selection-start-line="444" selection-end-line="447" selection-end-column="54" />
+            <state>
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1543691807799" expanded="true" signature="12321:18211" ph="..." />
+                <marker date="1543692447555" expanded="true" signature="12299:18189" ph="..." />
               </folding>
             </state>
           </provider>
@@ -326,6 +324,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1032" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49917626" visible="true" weight="0.35538954" />
       <window_info id="Structure" order="1" sideWeight="0.50082374" side_tool="true" weight="0.27748132" />
@@ -417,11 +416,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="447" column="54" lean-forward="true" selection-start-line="444" selection-end-line="447" selection-end-column="54" />
+        <state>
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1543691807799" expanded="true" signature="12321:18211" ph="..." />
+            <marker date="1543692447555" expanded="true" signature="12299:18189" ph="..." />
           </folding>
         </state>
       </provider>
