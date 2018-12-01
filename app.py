@@ -439,8 +439,9 @@ def get_countries():
     for s in star.find():
         word = s['keyword']
         freq = s['frequency']
-
-        output.append({'mal': str(next(iter(countries)))})
+        val = 'قطر'
+        output.append({'mal': str(next(iter(countries))),
+                       'sec': val})
 
         # if word in countries:
         #     output.append({'word': word,
