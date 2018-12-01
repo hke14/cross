@@ -393,12 +393,10 @@ def get_countries():
     for s in star.find():
         word = s['keyword']
         freq = s['frequency']
-        # try:
-        #     code = countries[word]
-        # except KeyError:
-        #     continue
-        output.append({'country': word,
-                       'frequency': freq})
+        if word in countries:
+            output.append({'country': word,
+                           'frequency': freq})
+
     return jsonify(output)
 
 if __name__ == '__main__':
