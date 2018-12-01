@@ -443,12 +443,10 @@ def get_countries():
         val = 'قطر'
         val2 = 'الولايات المتحدة'
         val3 = 'إيران'
-        test = next(iter(countries))
 
-        output.append({'mal': str(next(iter(countries))),
-                       'ror': val3,
-                       'sec': val,
-                       'thr': val2})
+        output.append({'mal': countries[val],
+                       'ror': countries[val2],
+                       'sec': countries[val3]})
 
         # if word in countries:
         #     output.append({'word': word,
