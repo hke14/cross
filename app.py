@@ -449,7 +449,7 @@ def get_countries():
                        'ror': val2,
                        'sec': val3})
         try:
-            output.append({'res': countries[word]})
+            output.append({'res': countries[str(word)]})
         except KeyError:
             res = "fuck"
             output.append({'res': res})

@@ -81,11 +81,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="447" column="35" selection-start-line="447" selection-start-column="35" selection-end-line="447" selection-end-column="35" />
+            <state relative-caret-position="217">
+              <caret line="451" column="44" lean-forward="true" selection-start-line="451" selection-start-column="44" selection-end-line="451" selection-end-column="44" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1543706668345" expanded="true" signature="12299:18668" ph="..." />
+                <marker date="1543706896943" expanded="true" signature="12299:18635" ph="..." />
               </folding>
             </state>
           </provider>
@@ -323,6 +323,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1032" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49917626" visible="true" weight="0.037199125" />
       <window_info id="Structure" order="1" sideWeight="0.50082374" side_tool="true" weight="0.27748132" />
@@ -414,11 +415,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="447" column="35" selection-start-line="447" selection-start-column="35" selection-end-line="447" selection-end-column="35" />
+        <state relative-caret-position="217">
+          <caret line="451" column="44" lean-forward="true" selection-start-line="451" selection-start-column="44" selection-end-line="451" selection-end-column="44" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1543706668345" expanded="true" signature="12299:18668" ph="..." />
+            <marker date="1543706896943" expanded="true" signature="12299:18635" ph="..." />
           </folding>
         </state>
       </provider>
