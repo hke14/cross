@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-
 import json
 import pymongo
 from flask import Flask
@@ -441,7 +437,7 @@ def get_countries():
         word = s['keyword']
         freq = s['frequency']
 
-        output.append({'mal': next(iter(countries))})
+        output.append({'mal': str(next(iter(countries)))})
 
         # if word in countries:
         #     output.append({'word': word,
