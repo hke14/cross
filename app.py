@@ -440,8 +440,10 @@ def get_countries():
         word = s['keyword']
         freq = s['frequency']
         val = 'قطر'
+        val2 = 'الولايات المتحدة'
         output.append({'mal': str(next(iter(countries))),
-                       'sec': val})
+                       'sec': val,
+                       'thr': val2})
 
         # if word in countries:
         #     output.append({'word': word,
