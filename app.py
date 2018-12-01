@@ -387,7 +387,8 @@ def insert_rel():
 @app.route('/getCountries', methods=['GET'])
 def get_countries():
     output = []
-    countries = {'إيران': 'IR', 'الولايات المتحدة': 'US', 'جزر جوادلوب': 'GP', 'آيسلندا': 'IS', 'أثيوبيا': 'ET', 'أذربيجان': 'AZ',
+    countries = {'إيران': 'IR', 'الولايات المتحدة': 'US', 'جزر جوادلوب': 'GP', 'آيسلندا': 'IS', 'أثيوبيا': 'ET',
+                 'أذربيجان': 'AZ',
                  'أراض فرنسية جنوبية': 'TF', 'أرمينيا': 'AM', 'أروبا': 'AW', 'أستراليا': 'AU', 'ألبانيا': 'AL',
                  'ألمانيا': 'DE', 'أنتاركتيكا': 'AQ', 'أنتيغوا/بربودا': 'AG', 'أنجويلا': 'AI', 'أندورا': 'AD',
                  'أندونيسيا': 'ID', 'أنغولا': 'AO', 'أورغواي': 'UY', 'أوزباكستان': 'UZ', 'أوغندا': 'UG',
@@ -442,9 +443,15 @@ def get_countries():
         val = 'قطر'
         val2 = 'الولايات المتحدة'
         val3 = 'إيران'
-        output.append({'mal': val3,
-                       'sec': val,
-                       'thr': val2})
+
+        test = next(iter(countries))
+        if val3==test:
+            res = "res"
+            output.append({'res': res})
+        else:
+            output.append({'mal': next(iter(countries)),
+                           'sec': val,
+                           'thr': val2})
 
         # if word in countries:
         #     output.append({'word': word,
