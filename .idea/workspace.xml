@@ -66,14 +66,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="5712" />
+          <entry key="py" value="5846" />
           <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="5712" />
+          <entry key="Python" value="5846" />
         </counts>
       </usages-collector>
     </session>
@@ -83,11 +83,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="398" column="29" selection-start-line="398" selection-start-column="29" selection-end-line="398" selection-end-column="29" />
+            <state relative-caret-position="201">
+              <caret line="445" column="56" selection-start-line="445" selection-start-column="56" selection-end-line="445" selection-end-column="56" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1543688279789" expanded="true" signature="12321:17199" ph="..." />
+                <marker date="1543690319696" expanded="true" signature="12321:18135" ph="..." />
               </folding>
             </state>
           </provider>
@@ -166,7 +166,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-166" />
+    <option name="x" value="184" />
     <option name="width" value="960" />
     <option name="height" value="1030" />
   </component>
@@ -416,11 +416,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="398" column="29" selection-start-line="398" selection-start-column="29" selection-end-line="398" selection-end-column="29" />
+        <state relative-caret-position="201">
+          <caret line="445" column="56" selection-start-line="445" selection-start-column="56" selection-end-line="445" selection-end-column="56" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1543688279789" expanded="true" signature="12321:17199" ph="..." />
+            <marker date="1543690319696" expanded="true" signature="12321:18135" ph="..." />
           </folding>
         </state>
       </provider>
