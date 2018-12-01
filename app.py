@@ -445,10 +445,13 @@ def get_countries():
         val3 = 'إيران'
 
         output.append({'mal': countries[val],
+                       'nit': word,
                        'ror': countries[val2],
                        'sec': countries[val3]})
-        if word in countries:
-            res = "res"
+        try:
+            output.append({'res': countries[word]})
+        except KeyError:
+            res = "fuck"
             output.append({'res': res})
         # if word in countries:
         #     output.append({'word': word,
