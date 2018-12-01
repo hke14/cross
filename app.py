@@ -446,6 +446,7 @@ def get_countries():
         test = next(iter(countries))
 
         output.append({'mal': str(next(iter(countries))),
+                       'ror': val3,
                        'sec': val,
                        'thr': val2})
 
