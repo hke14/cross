@@ -397,7 +397,7 @@ def get_countries():
             code = countries[word]
         except KeyError:
             continue
-        output.append({'country': code,
+        output.append({'country': word,
                        'frequency': freq})
     return jsonify(countries)
 
