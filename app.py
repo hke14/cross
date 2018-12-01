@@ -443,15 +443,11 @@ def get_countries():
         val = 'قطر'
         val2 = 'الولايات المتحدة'
         val3 = 'إيران'
-
         test = next(iter(countries))
-        if val3==test:
-            res = "res"
-            output.append({'res': res})
-        else:
-            output.append({'mal': next(iter(countries)),
-                           'sec': val,
-                           'thr': val2})
+
+        output.append({'mal': str(next(iter(countries))),
+                       'sec': val,
+                       'thr': val2})
 
         # if word in countries:
         #     output.append({'word': word,
@@ -461,7 +457,8 @@ def get_countries():
         #                    'mal': next(iter(countries))})
         #     # output.append({#'country': countries[word],
         #     #                'frequency': freq})
-    return jsonify(output)
+    return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+    #return jsonify(output)
 
 
 if __name__ == '__main__':
