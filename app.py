@@ -441,14 +441,16 @@ def get_countries():
         word = s['keyword']
         freq = s['frequency']
 
-        if word in countries:
-            output.append({'word': word,
-                           'cunt': next(iter(countries))})
-        else:
-            output.append({'word': word,
-                           'mal': next(iter(countries))})
-            # output.append({#'country': countries[word],
-            #                'frequency': freq})
+        output.append({'mal': next(iter(countries))})
+
+        # if word in countries:
+        #     output.append({'word': word,
+        #                    'cunt': next(iter(countries))})
+        # else:
+        #     output.append({'word': word,
+        #                    'mal': next(iter(countries))})
+        #     # output.append({#'country': countries[word],
+        #     #                'frequency': freq})
     return jsonify(output)
 
 
