@@ -66,25 +66,25 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="7128" />
+          <entry key="py" value="7138" />
           <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="7128" />
+          <entry key="Python" value="7138" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="462" column="39" selection-start-line="462" selection-start-column="39" selection-end-line="462" selection-end-column="39" />
+            <state relative-caret-position="125">
+              <caret line="464" column="55" lean-forward="true" selection-start-line="464" selection-start-column="55" selection-end-line="464" selection-end-column="55" />
               <folding>
                 <element signature="e#26#37#0" expanded="true" />
               </folding>
@@ -92,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runtime.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -176,7 +176,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="960" />
     <option name="height" value="1032" />
   </component>
@@ -335,6 +335,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1032" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49917626" visible="true" weight="0.100853786" />
       <window_info id="Structure" order="1" sideWeight="0.50082374" side_tool="true" weight="0.27748132" />
@@ -415,16 +416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="462" column="39" selection-start-line="462" selection-start-column="39" selection-end-line="462" selection-end-column="39" />
-          <folding>
-            <element signature="e#26#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -436,6 +427,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="464" column="55" lean-forward="true" selection-start-line="464" selection-start-column="55" selection-end-line="464" selection-end-column="55" />
+          <folding>
+            <element signature="e#26#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
