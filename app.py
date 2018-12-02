@@ -445,17 +445,9 @@ def get_countries():
         val3 = 'إيران'
         newlist = countries.items()
         for i in newlist:
-            if word == i[0]:
+            if word in i[0]:
                 output.append({'country_correct': i[1],
                                'frequency': freq})
-                continue
-            else:
-                res = "fuck"
-                output.append({'res': res,
-                               'country_wrong_code': i[1],
-                               'word': word,
-                               'country_wrong': i[0]})
-                continue
         # if word in countries:
         #     output.append({'word': word,
         #                    'cunt': next(iter(countries))})
