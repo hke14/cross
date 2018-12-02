@@ -459,6 +459,8 @@ def get_countries():
             # print("code" + str(code.decode(encoding='UTF-8')))
             # print("word" + word)
 
+            word = word.decode('utf-8')
+            code = code.decode('utf-8')
             if word == code:
                 output.append({'country_correct': i[1],
                                'frequency': freq})
