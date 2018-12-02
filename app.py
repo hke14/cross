@@ -448,6 +448,9 @@ def get_countries():
             if word == i[0]:
                 output.append({'country': i[1],
                                'frequency': freq})
+            else:
+                res = "fuck"
+                output.append({'res': res})
         # if word in countries:
         #     output.append({'word': word,
         #                    'cunt': next(iter(countries))})
