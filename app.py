@@ -274,7 +274,7 @@ def search():
 
 @app.route('/getKeywords', methods=['GET'])
 def getKeywords():
-    collection = mongo.db.false_keywords
+    collection = mongo.db.keywords
     out = []
     for s in collection.find().limit(20).sort([("frequency", pymongo.DESCENDING)]):
         out.append({'keyword': (s['keyword']),
@@ -296,7 +296,7 @@ def searchKeywords():
     data = json.loads(article)
     keyword = data['keywords']
     keyword = keyword.split(',')
-    collection = mongo.db.false_articles
+    collection = mongo.db.articles
     output = []
     for s in collection.find({"keywords": {"$in": keyword}}):
         output.append({'id': str(s['_id']),
@@ -325,7 +325,7 @@ def get_alt_article():
     data = json.loads(article)
     id = data['id']
 
-    star = mongo.db.false_articles
+    star = mongo.db.articles
     output = []
     for s in star.find({'_id': ObjectId(id)}):
         output.append({'id': str(s['_id']),
@@ -343,7 +343,7 @@ def get_alt_article():
 
 @app.route('/addrel', methods=['GET'])
 def add_rel():
-    star = mongo.db.false_articles
+    star = mongo.db.articles
     star.update(
         {},
         {"$set": {"related_articles": []}},
@@ -355,7 +355,7 @@ def add_rel():
 
 @app.route('/insertrel', methods=['GET'])
 def insert_rel():
-    star = mongo.db.false_articles
+    star = mongo.db.articles
     # the keywords and ids
     key_id = []
     # test
@@ -446,11 +446,15 @@ def get_countries():
         newlist = countries.items()
         for i in newlist:
             if word == i[0]:
-                output.append({'country': i[1],
+                output.append({'country_correct': i[1],
                                'frequency': freq})
+                continue
             else:
                 res = "fuck"
-                output.append({'res': res})
+                output.append({'res': res,
+                               'word': word,
+                               'country_wrong': i[1]})
+                continue
         # if word in countries:
         #     output.append({'word': word,
         #                    'cunt': next(iter(countries))})
@@ -459,8 +463,8 @@ def get_countries():
         #                    'mal': next(iter(countries))})
         #     # output.append({#'country': countries[word],
         #     #                'frequency': freq})
-    #return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
-    return jsonify(output)
+    return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+    #return jsonify(output)
 
 
 if __name__ == '__main__':
