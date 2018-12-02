@@ -445,9 +445,20 @@ def get_countries():
         val3 = 'إيران'
         newlist = countries.items()
         for i in newlist:
-            code = i[0]
-            #code = i[0].decode("utf-8")
+            code = i[0].encode(encoding='UTF-8',errors='strict')
+
             #word = word.encode("utf-8")
+            #code = i[0].decode("utf-8")
+            #word = word.decode(encoding = 'UTF-8',errors = 'strict')
+
+            word = word.encode(encoding='UTF-8', errors='strict')
+
+            # print("code" + str(code.decode(encoding='UTF-8')))
+            # print("word" + word)
+
+            word = str(word.decode(encoding='UTF-8'))
+            code = str(code.decode(encoding='UTF-8'))
+
             if word == code:
                 output.append({'country_correct': i[1],
                                'frequency': freq})
