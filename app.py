@@ -388,7 +388,7 @@ def insert_rel():
 def get_countries():
     output = []
     countries = {'إيران': 'IR', 'الولايات المتحدة': 'US', 'جزر جوادلوب': 'GP', 'آيسلندا': 'IS', 'أثيوبيا': 'ET',
-                 'أذربيجان': 'AZ',
+                 'أذربيجان': 'AZ', 'أمريكا': 'US',
                  'أراض فرنسية جنوبية': 'TF', 'أرمينيا': 'AM', 'أروبا': 'AW', 'أستراليا': 'AU', 'ألبانيا': 'AL',
                  'ألمانيا': 'DE', 'أنتاركتيكا': 'AQ', 'أنتيغوا/بربودا': 'AG', 'أنجويلا': 'AI', 'أندورا': 'AD',
                  'أندونيسيا': 'ID', 'أنغولا': 'AO', 'أورغواي': 'UY', 'أوزباكستان': 'UZ', 'أوغندا': 'UG',
@@ -443,16 +443,11 @@ def get_countries():
         val = 'قطر'
         val2 = 'الولايات المتحدة'
         val3 = 'إيران'
-
-        output.append({'mal': val,
-                       'nit': word,
-                       'ror': val2,
-                       'sec': val3})
-        try:
-            output.append({'res': countries[str(word)]})
-        except KeyError:
-            res = "fuck"
-            output.append({'res': res})
+        newlist = countries.items()
+        for i in newlist:
+            if word == i[0]:
+                output.append({'country': i[1],
+                               'frequency': freq})
         # if word in countries:
         #     output.append({'word': word,
         #                    'cunt': next(iter(countries))})
@@ -461,8 +456,8 @@ def get_countries():
         #                    'mal': next(iter(countries))})
         #     # output.append({#'country': countries[word],
         #     #                'frequency': freq})
-    return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
-    #return jsonify(output)
+    #return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+    return jsonify(output)
 
 
 if __name__ == '__main__':
