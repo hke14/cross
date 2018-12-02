@@ -354,8 +354,8 @@ def add_rel():
     output = []
     return jsonify(output)
 
-
-@app.route('/insertrel', methods=['GET'])
+#get related articles after getting id
+@app.route('/getRel', methods=['POST'])
 def insert_rel():
     star = mongo.db.articles
     # the keywords and ids
@@ -364,24 +364,41 @@ def insert_rel():
     output = []
     # the output
     putout = []
-    for s in star.find():
+
+    articles = []
+    if not request.json or not 'id' in request.json:
+        abort(400)
+    article = {
+        'id': request.json['id']
+    }
+    articles.append(article)
+    article = json.dumps(article)
+    data = json.loads(article)
+    id = data['id']
+
+    for s in star.find({'_id': ObjectId(id)}):
         key_id.append({'keywords': s['keywords'],
-                       'id': str(s['_id']),
-                       'title': s['title'],
                        'url': s['url']})
     for key in key_id:
         keywords = key['keywords']
         # list of titles
-        tits = []
+        rel = []
         for s in star.find({"keywords": {"$in": keywords}}):
             url = s['url']
+            title = s['title']
+            pic = s['pic']
+
             orig_url = key['url']
+
             if url == orig_url:
                 continue
             else:
-                tits.append(url)
-        putout.append({'orig_url': key['url'],
-                       'related_urls': tits})
+                rel.append(url)
+                putout.append({'orig_url': key['url'],
+                               'related_url': url,
+                               'related_title': title,
+                               'related_pic': pic,
+                               })
 
     return json.dumps({'result': putout}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
