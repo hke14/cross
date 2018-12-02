@@ -49,7 +49,7 @@ def get_all_stars():
 def get_all_middle_east():
     star = mongo.db.articles
     output = []
-    for s in star.find({'categorie': 'middle-east'}):
+    for s in star.aggregate([{'$match':{'categorie':"middle-east"}},{'$sample': {'size': 10 }}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -68,7 +68,7 @@ def get_all_middle_east():
 def get_all_world():
     star = mongo.db.articles
     output = []
-    for s in star.find({'categorie': 'world'}):
+    for s in star.aggregate([{'$match':{'categorie':"world"}},{'$sample': {'size': 10 }}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -87,7 +87,7 @@ def get_all_world():
 def get_all_sport():
     star = mongo.db.articles
     output = []
-    for s in star.find({'categorie': 'sport'}):
+    for s in star.aggregate([{'$match':{'categorie':"sport"}},{'$sample': {'size': 10 }}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -106,7 +106,7 @@ def get_all_sport():
 def get_all_tech():
     star = mongo.db.articles
     output = []
-    for s in star.find({'categorie': 'tech'}):
+    for s in star.aggregate([{'$match':{'categorie':"tech"}},{'$sample': {'size': 10 }}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -125,7 +125,7 @@ def get_all_tech():
 def get_all_business():
     star = mongo.db.articles
     output = []
-    for s in star.find({'categorie': 'business'}):
+    for s in star.aggregate([{'$match':{'categorie':"business"}},{'$sample': {'size': 5 }}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -459,7 +459,7 @@ def get_countries():
             # print("code" + str(code.decode(encoding='UTF-8')))
             # print("word" + word)
 
-            word = word.encode('utf-8')
+            #word = word.encode('utf-8')
             #code = code.encode('utf-8')
             if word == code:
                 output.append({'country_correct': i[1],
