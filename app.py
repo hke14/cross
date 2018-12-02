@@ -459,7 +459,7 @@ def get_countries():
             # print("code" + str(code.decode(encoding='UTF-8')))
             # print("word" + word)
 
-            if unicodedata.normalize('NFKD', word) == unicodedata.normalize('NFKD', code):
+            if word == code:
                 output.append({'country_correct': i[1],
                                'frequency': freq})
         # if word in countries:
