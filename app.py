@@ -125,7 +125,7 @@ def get_all_tech():
 def get_all_business():
     star = mongo.db.articles
     output = []
-    for s in star.aggregate([{'$match':{'categorie':"business"}},{'$sample': {'size': 5 }}]):
+    for s in star.aggregate([{'$match':{'categorie':"business"}},{'$sample': {'size': 10 }}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
