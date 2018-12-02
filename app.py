@@ -452,8 +452,9 @@ def get_countries():
             else:
                 res = "fuck"
                 output.append({'res': res,
+                               'country_wrong_code': i[1],
                                'word': word,
-                               'country_wrong': i[1]})
+                               'country_wrong': i[0]})
                 continue
         # if word in countries:
         #     output.append({'word': word,
