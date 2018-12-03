@@ -403,13 +403,12 @@ def insert_rel():
 
     return json.dumps({'result': putout}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
-
-@app.route('/getCountries', methods=['GET'])
-def get_countries():
+@app.route('/insertCountries', methods=['GET'])
+def insert_countries():
     output = []
     star = mongo.db.countries
     star_star = mongo.db.false_keywords
-
+    star_star_star = mongo.db.heatmap_values
     start_time = time.time()
 
     countries_codes = {}
@@ -421,8 +420,24 @@ def get_countries():
 
     for key in countries_codes:
         for s in star_star.find({'keyword': key}):
-            output.append({'code': countries_codes[key],
-                           'frequency': s['frequency']})
+            star_star_star.insert_one({'Code': countries_codes[key],
+                                      'frequency': s['frequency']})
+            print ("Success")
+
+    print ("My program took ", time.time()-start_time, " to run")
+@app.route('/getCountries', methods=['GET'])
+def get_countries():
+    output = []
+    star = mongo.db.countries
+    star_star = mongo.db.false_keywords
+    star_star_star = mongo.db.heatmap_values
+    start_time = time.time()
+
+    countries_codes = {}
+
+    for s in star_star_star.find():
+        output.append({'Code': s['Code'],
+                       'Frequency': s['frequency']})
 
     print ("My program took ", time.time()-start_time, " to run")
     #return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
