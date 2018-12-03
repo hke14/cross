@@ -277,10 +277,11 @@ def search():
 def getKeywords():
     collection = mongo.db.false_keywords
     out = []
-    for s in collection.find().limit(20).sort([("frequency", pymongo.DESCENDING)]):
-        out.append({'keyword': (s['keyword']),
-                    'frequency': (s['frequency'])
-                    })
+    for s in collection.find().sort([("frequency", pymongo.DESCENDING)]):
+        if len(s['keyword'])>1:
+            out.append({'keyword': (s['keyword']),
+                        'frequency': (s['frequency'])
+                        })
     return jsonify(out)
 
 
@@ -403,8 +404,8 @@ def insert_rel():
     return json.dumps({'result': putout}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
 
-@app.route('/insertCountries', methods=['GET'])
-def insert_countries():
+@app.route('/getCountries', methods=['GET'])
+def get_countries():
     output = []
     star = mongo.db.countries
     star_star = mongo.db.false_keywords
