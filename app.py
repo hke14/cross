@@ -49,7 +49,7 @@ def get_all_stars():
 def get_all_middle_east():
     star = mongo.db.articles
     output = []
-    for s in star.aggregate([{'$match':{'categorie':"middle-east"}},{'$sample': {'size': 10 }}]):
+    for s in star.aggregate([{'$match': {'categorie': "middle-east"}}, {'$sample': {'size': 10}}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -68,7 +68,7 @@ def get_all_middle_east():
 def get_all_world():
     star = mongo.db.articles
     output = []
-    for s in star.aggregate([{'$match':{'categorie':"world"}},{'$sample': {'size': 10 }}]):
+    for s in star.aggregate([{'$match': {'categorie': "world"}}, {'$sample': {'size': 10}}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -87,7 +87,7 @@ def get_all_world():
 def get_all_sport():
     star = mongo.db.articles
     output = []
-    for s in star.aggregate([{'$match':{'categorie':"sport"}},{'$sample': {'size': 10 }}]):
+    for s in star.aggregate([{'$match': {'categorie': "sport"}}, {'$sample': {'size': 10}}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -106,7 +106,7 @@ def get_all_sport():
 def get_all_tech():
     star = mongo.db.articles
     output = []
-    for s in star.aggregate([{'$match':{'categorie':"tech"}},{'$sample': {'size': 10 }}]):
+    for s in star.aggregate([{'$match': {'categorie': "tech"}}, {'$sample': {'size': 10}}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -125,7 +125,7 @@ def get_all_tech():
 def get_all_business():
     star = mongo.db.articles
     output = []
-    for s in star.aggregate([{'$match':{'categorie':"business"}},{'$sample': {'size': 10 }}]):
+    for s in star.aggregate([{'$match': {'categorie': "business"}}, {'$sample': {'size': 10}}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
@@ -276,7 +276,7 @@ def search():
 
 @app.route('/getKeywords', methods=['GET'])
 def getKeywords():
-    collection = mongo.db.keywords
+    collection = mongo.db.false_keywords
     out = []
     for s in collection.find().limit(20).sort([("frequency", pymongo.DESCENDING)]):
         out.append({'keyword': (s['keyword']),
@@ -354,7 +354,8 @@ def add_rel():
     output = []
     return jsonify(output)
 
-#get related articles after getting id
+
+# get related articles after getting id
 @app.route('/getRel', methods=['POST'])
 def insert_rel():
     star = mongo.db.articles
@@ -403,12 +404,12 @@ def insert_rel():
     return json.dumps({'result': putout}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
 
-@app.route('/getCountries', methods=['GET'])
-def get_countries():
+@app.route('/insertCountries', methods=['GET'])
+def insert_countries():
     output = []
     countries = {'إيران': 'IR', 'الولايات المتحدة': 'US', 'جزر جوادلوب': 'GP', 'آيسلندا': 'IS', 'أثيوبيا': 'ET',
-                 'أذربيجان': 'AZ', 'أمريكا': 'US',
-                 'أراض فرنسية جنوبية': 'TF', 'أرمينيا': 'AM', 'أروبا': 'AW', 'أستراليا': 'AU', 'ألبانيا': 'AL',
+                 'أذربيجان': 'AZ', 'أمريكا': 'US', 'أراض فرنسية جنوبية': 'TF', 'أرمينيا': 'AM', 'أروبا': 'AW',
+                 'أستراليا': 'AU', 'ألبانيا': 'AL',
                  'ألمانيا': 'DE', 'أنتاركتيكا': 'AQ', 'أنتيغوا/بربودا': 'AG', 'أنجويلا': 'AI', 'أندورا': 'AD',
                  'أندونيسيا': 'ID', 'أنغولا': 'AO', 'أورغواي': 'UY', 'أوزباكستان': 'UZ', 'أوغندا': 'UG',
                  'أوكرانيا': 'UA', 'أيرلندا': 'IE', 'إريتريا': 'ER', 'إسبانيا': 'ES', 'إكوادور': 'EC',
@@ -455,42 +456,59 @@ def get_countries():
                  'مولدافيا': 'MD', 'موناكو': 'MC', 'مونتسيرات': 'MS', 'ميانمار': 'MM', 'ميكرونيسيا': 'FM',
                  'ناميبيا': 'NA', 'ناورو': 'NR', 'نيبال': 'NP', 'نيجيريا': 'NG', 'نيكاراجوا': 'NI', 'نيوزيلندا': 'NZ',
                  'نييوي': 'NU', 'هايتي': 'HT', 'هندوراس': 'HN', 'هنغاريا': 'HU', 'هولندا': 'NL', 'هونغ كونغ': 'HK'}
-    star = mongo.db.false_keywords
-    for s in star.find():
-        word = s['keyword']
-        freq = s['frequency']
-        val = 'قطر'
-        val2 = 'الولايات المتحدة'
-        val3 = 'إيران'
-        newlist = countries.items()
-        for i in newlist:
-            code = i[0]
-            #code = i[0].encode(encoding='UTF-8',errors='strict')
+    star = mongo.db.countries
+    star_star = mongo.db.false_keywords
 
-            #word = word.encode("utf-8")
-            #code = i[0].decode("utf-8")
-            #word = word.decode(encoding = 'UTF-8',errors = 'strict')
+    for ss in star_star.find():
+        key = ss['keyword']
+        for s in star.find({"country": key}):
+            freq = ss['frequency']
+            code = s['country_code']
+            print (freq)
+            print (code)
+            output.append({'code': code,
+                           'freq': freq,
+                           })
 
-            #word = word.encode(encoding='UTF-8', errors='strict')
+    # for key in countries:
+    #
+    #     country_name = str(key)
+    #     country_code = str(countries[key])
+    #
+    #     print ("Country: "+country_name)
+    #     print ("Code: "+country_code)
+    #
+    #     star.insert_one({
+    #                 'country': country_name,
+    #                 'country_code': country_code},
+    #                     )
 
-            # print("code" + str(code.decode(encoding='UTF-8')))
-            # print("word" + word)
+    # for s in star.find():
+    #     word = s['keyword']
+    #     freq = s['frequency']
+    #     val = 'قطر'
+    #     val2 = 'الولايات المتحدة'
+    #     val3 = 'إيران'
+    #     newlist = countries.items()
+    #
+    #
 
-            #word = word.encode('utf-8')
-            #code = code.encode('utf-8')
-            if word == code:
-                output.append({'country_correct': i[1],
-                               'frequency': freq})
-        # if word in countries:
-        #     output.append({'word': word,
-        #                    'cunt': next(iter(countries))})
-        # else:
-        #     output.append({'word': word,
-        #                    'mal': next(iter(countries))})
-        #     # output.append({#'country': countries[word],
-        #     #                'frequency': freq})
+    #
+    # for i in newlist:
+    #     code = i[0]
+    #     if word == code:
+    #         output.append({'country_correct': i[1],
+    #                        'frequency': freq})
+    # if word in countries:
+    #     output.append({'word': word,
+    #                    'cunt': next(iter(countries))})
+    # else:
+    #     output.append({'word': word,
+    #                    'mal': next(iter(countries))})
+    #     # output.append({#'country': countries[word],
+    #     #                'frequency': freq})
     return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
-    #return jsonify(output)
+    # return jsonify(output)
 
 
 if __name__ == '__main__':
