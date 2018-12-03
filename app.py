@@ -428,19 +428,25 @@ def insert_countries():
 @app.route('/getCountries', methods=['GET'])
 def get_countries():
     output = []
-    star = mongo.db.countries
-    star_star = mongo.db.false_keywords
     star_star_star = mongo.db.heatmap_values
     start_time = time.time()
 
-    countries_codes = {}
 
     for s in star_star_star.find():
         output.append({'Code': s['Code'],
                        'Frequency': s['frequency']})
 
     print ("My program took ", time.time()-start_time, " to run")
-    #return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+    output.sort(key=lambda entry: entry['Frequency'])
+    end = len(output)-1
+    for item in output:
+        temp = item['Frequency']
+        item['Frequency'] = output[end]['Frequency']
+        output[end]['Frequency'] = temp
+        if end == len(output)/2:
+            continue
+        end = end-1
     return jsonify(output)
 
 
