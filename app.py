@@ -420,39 +420,12 @@ def insert_countries():
 
     for key in countries_codes:
         for s in star_star.find({'keyword': key}):
-            print ("H")
-            # print (key)
-            # print (s['frequency'])
+            output.append({'code': countries_codes[key],
+                           'frequency': s['frequency']})
 
-
-
-    # for ss in star_star.find():
-    #     key = ss['keyword']
-    #     for s in star.find({"country": key}):
-    #         freq = ss['frequency']
-    #         code = s['country_code']
-    #         print (freq)
-    #         print (code)
-    #         output.append({'code': code,
-    #                        'freq': freq,
-    #                        })
-
-    # for key in countries:
-    #
-    #     country_name = str(key)
-    #     country_code = str(countries[key])
-    #
-    #     print ("Country: "+country_name)
-    #     print ("Code: "+country_code)
-    #
-    #     star.insert_one({
-    #                 'country': country_name,
-    #                 'country_code': country_code},
-    #                     )
-    #print (countries_codes)
     print ("My program took ", time.time()-start_time, " to run")
-    return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
-    # return jsonify(output)
+    #return json.dumps({'result': output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+    return jsonify(output)
 
 
 if __name__ == '__main__':

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="817210be-13af-42d4-983a-3b793c3b2cd8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="817210be-13af-42d4-983a-3b793c3b2cd8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-177">
-              <caret line="421" column="36" lean-forward="true" selection-start-line="421" selection-start-column="36" selection-end-line="421" selection-end-column="36" />
+            <state relative-caret-position="993">
+              <caret line="451" column="28" lean-forward="true" selection-start-line="451" selection-start-column="28" selection-end-line="451" selection-end-column="28" />
               <folding>
                 <element signature="e#26#37#0" expanded="true" />
               </folding>
@@ -400,8 +398,8 @@
     <entry file="file://$PROJECT_DIR$/del.py" />
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-177">
-          <caret line="421" column="36" lean-forward="true" selection-start-line="421" selection-start-column="36" selection-end-line="421" selection-end-column="36" />
+        <state relative-caret-position="993">
+          <caret line="451" column="28" lean-forward="true" selection-start-line="451" selection-start-column="28" selection-end-line="451" selection-end-column="28" />
           <folding>
             <element signature="e#26#37#0" expanded="true" />
           </folding>
