@@ -388,7 +388,7 @@ def insert_rel():
             url = s['url']
             title = s['title']
             pic = s['pic']
-
+            id = str(s['_id'])
             orig_url = key['url']
 
             if url == orig_url:
@@ -399,9 +399,10 @@ def insert_rel():
                                'related_url': url,
                                'related_title': title,
                                'related_pic': pic,
+                               'related_id': id
                                })
-
-    return json.dumps({'result': putout}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+    return jsonify(output)
+    # return json.dumps({'result': putout}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
 @app.route('/insertCountries', methods=['GET'])
 def insert_countries():
