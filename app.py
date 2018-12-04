@@ -398,7 +398,7 @@ def insert_rel():
                                'related_url': url,
                                'related_title': title,
                                'related_pic': pic,
-                               'related_id': id
+                               'related_id': id,
                                })
     return jsonify(putout)
     # return json.dumps({'result': putout}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
@@ -470,17 +470,21 @@ def get_rel_country():
     for code in country_codes.find({'country_code': country_code}):
         country_name_key = code['country']
     country_name.append(country_name_key)
-
+    print ("Country name is"+country_name_key)
     for s in star.find({"keywords": {"$in": country_name}}):
         url = s['url']
         title = s['title']
         pic = s['pic']
         id = str(s['_id'])
-        output.append({'url': url,
-                       'title': title,
-                       'pic': pic,
-                       'id': id
-                       })
+        if not country_name_key:
+            return jsonify(output)
+        else:
+            output.append({'url': url,
+                           'title': title,
+                           'pic': pic,
+                           'id': id,
+                           'len': len(s['keywords'])
+                           })
     return jsonify(output)
 
 
