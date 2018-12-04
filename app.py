@@ -452,13 +452,7 @@ def get_countries():
 @app.route('/getRelCountry', methods=['POST'])
 def get_rel_country():
     star = mongo.db.articles
-
-    key_id = []
-    # test
     output = []
-    # the output
-    putout = []
-
     articles = []
     if not request.json or not 'code' in request.json:
         abort(400)
@@ -469,38 +463,29 @@ def get_rel_country():
     article = json.dumps(article)
     data = json.loads(article)
     country_code = data['code']
-
+    country_name_key = ""
+    country_name = []
     country_codes = mongo.db.countries
 
+    for code in country_codes.find({'country_code': country_code}):
+        country_name_key = code['country']
+    country_name.append(country_name_key)
+
+    for s in star.find({"keywords": {"$in": country_name}}):
+        url = s['url']
+        title = s['title']
+        pic = s['pic']
+        id = str(s['_id'])
+        output.append({'url': url,
+                       'title': title,
+                       'pic': pic,
+                       'id': id
+                       })
+    return jsonify(output)
 
 
 
 
-@app.route('/tester', methods=['POST'])
-def test_rel():
-    star = mongo.db.articles
-    # the keywords and ids
-    key_id = []
-    # test
-    output = []
-    # the output
-    putout = []
-
-    articles = []
-    if not request.json or not 'id' in request.json:
-        abort(400)
-    article = {
-        'id': request.json['id']
-    }
-    articles.append(article)
-    article = json.dumps(article)
-    data = json.loads(article)
-    id = data['id']
-    newlist = ['قطر']
-    for s in star.find({'_id': ObjectId(id)}):
-        key_id.append({'keywords': newlist,
-                       'url': s['url']})
-    return json.dumps({'result': key_id}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
 
 
