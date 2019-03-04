@@ -29,7 +29,7 @@ mongo = PyMongo(app)
 def get_all_stars():
     star = mongo.db.articles
     output = []
-    for s in star.find():
+    for s in star.aggregate([{'$sample': {'size': 100}}]):
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
