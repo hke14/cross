@@ -39,6 +39,7 @@ def get_all_stars():
                        'tag': s['tag'],
                        'tagu': s['tagu'],
                        'keywords': s['keywords'],
+                       'category': s['categorie'],
                        'score': s['score']})
     return jsonify(output)
     # return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
