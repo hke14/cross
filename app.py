@@ -513,7 +513,7 @@ def get_rel_country():
                            'score': score,
                            'len': len(s['keywords'])
                            },
-                           {upsert : True}
+                           upsert = True
                            )
     return jsonify(output)
 
