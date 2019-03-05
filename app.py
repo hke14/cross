@@ -205,7 +205,7 @@ def getCountryCodes():
     output = []
     for s in star.find():
         output.append({'country': s['country'],
-                    'code': s['country_code']
+                    'Code': s['country_code']
                    })
     return jsonify(output)
 
