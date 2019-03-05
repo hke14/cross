@@ -199,11 +199,15 @@ def get_article():
     return jsonify(output)
 
 
-@app.route('/bull')
-def add():
-    user = mongo.db.users
-    user.insert_one({'name': 'Anthony'})
-    return 'Added user'
+@app.route('/getCountryCodes')
+def getCountryCodes():
+    star = mongo.db.countries
+    output = []
+    for s in star.find():
+        output.append({'country': s['country'],
+                    'code': s['country_code']
+                   })
+    return jsonify(output)
 
 
 @app.route('/gimme', methods=['GET'])
