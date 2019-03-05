@@ -475,6 +475,13 @@ def get_rel_country():
         url = s['url']
         title = s['title']
         pic = s['pic']
+        title = s['title']
+        date = s['date_str']
+        tag = s['tag']
+        tagu = s['tagu']
+        keywords = s['keywords']
+        category = s['categorie']
+        score = s['score']
         id = str(s['_id'])
         if not country_name_key:
             return jsonify(output)
@@ -483,6 +490,12 @@ def get_rel_country():
                            'title': title,
                            'pic': pic,
                            'id': id,
+                           'date': date,
+                           'tag': tag,
+                           'tagu': tagu,
+                           'keywords': keywords,
+                           'category': category,
+                           'score': score,
                            'len': len(s['keywords'])
                            })
     return jsonify(output)
