@@ -57,7 +57,7 @@ def getSpecCountries():
                        'tag': s['tag'],
                        'tagu': s['tagu'],
                        'Country': s['country'],
-                       'category': s['categorie'],
+                       'category': s['category'],
                        'score': s['score']})
     return jsonify(output)
     # return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
