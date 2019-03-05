@@ -471,7 +471,6 @@ def get_rel_country():
     for code in country_codes.find({'country_code': country_code}):
         country_name_key = code['country']
     country_name.append(country_name_key)
-    print ("Country name is"+country_name_key)
     for s in star.find({"keywords": {"$in": country_name}}):
         url = s['url']
         title = s['title']
