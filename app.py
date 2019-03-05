@@ -499,7 +499,9 @@ def get_rel_country():
                            'score': score,
                            'len': len(s['keywords'])
                            })
-            star_star.insert_one({'url': url,
+            star_star.update(
+                           {title: title},
+                           {'url': url,
                            'title': title,
                            'pic': pic,
                            'id': id,
@@ -510,7 +512,9 @@ def get_rel_country():
                            'category': category,
                            'score': score,
                            'len': len(s['keywords'])
-                           })
+                           },
+                           {upsert : true}
+                           )
     return jsonify(output)
 
 
