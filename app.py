@@ -51,7 +51,7 @@ def getSpecCountries():
     for s in star.find():
         output.append({'id': str(s['_id']),
                        'title': s['title'],
-                       'date': s['date_str'],
+                       'date': s['date'],
                        'url': s['url'],
                        'pic': s['pic'],
                        'tag': s['tag'],
