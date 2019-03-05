@@ -443,15 +443,6 @@ def get_countries():
 
     print ("My program took ", time.time()-start_time, " to run")
 
-    output.sort(key=lambda entry: entry['Frequency'])
-    end = len(output)-1
-    for item in output:
-        temp = item['Frequency']
-        item['Frequency'] = output[end]['Frequency']
-        output[end]['Frequency'] = temp
-        if end == len(output)/2:
-            continue
-        end = end-1
     return jsonify(output)
 
 @app.route('/getRelCountry', methods=['POST'])
