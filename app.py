@@ -46,9 +46,9 @@ def get_all_stars():
 
 @app.route('/getSpecCountries', methods=['GET'])
 def getSpecCountries():
-    star = mongo.db.articles
+    star = mongo.db.Spec_Countries_News
     output = []
-    for s in star.aggregate([{'$sample': {'size': 200}}]):
+    for s in star.find():
         output.append({'id': str(s['_id']),
                        'title': s['title'],
                        'date': s['date_str'],
