@@ -45,7 +45,7 @@ def get_all_stars():
     # return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
 @app.route('/getSpecCountries', methods=['GET'])
-def get_all_stars():
+def getSpecCountries():
     star = mongo.db.articles
     output = []
     for s in star.aggregate([{'$sample': {'size': 200}}]):
