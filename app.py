@@ -503,7 +503,7 @@ def get_rel_country():
                            'date': date,
                            'tag': tag,
                            'tagu': tagu,
-                           'keywords': keywords,
+                           'country': country_name,
                            'category': category,
                            'score': score,
                            'len': len(s['keywords'])
