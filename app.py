@@ -44,6 +44,24 @@ def get_all_stars():
     return jsonify(output)
     # return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
 
+@app.route('/getSpecCountries', methods=['GET'])
+def get_all_stars():
+    star = mongo.db.articles
+    output = []
+    for s in star.aggregate([{'$sample': {'size': 200}}]):
+        output.append({'id': str(s['_id']),
+                       'title': s['title'],
+                       'date': s['date_str'],
+                       'url': s['url'],
+                       'pic': s['pic'],
+                       'tag': s['tag'],
+                       'tagu': s['tagu'],
+                       'Country': s['country'],
+                       'category': s['categorie'],
+                       'score': s['score']})
+    return jsonify(output)
+    # return json.dumps({'result' : output}, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+    
 
 @app.route('/middle-east', methods=['GET'])
 def get_all_middle_east():
