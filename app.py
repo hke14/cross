@@ -500,7 +500,7 @@ def get_rel_country():
                            'len': len(s['keywords'])
                            })
             star_star.update(
-                           {title: title},
+                           {'title': title},
                            {'url': url,
                            'title': title,
                            'pic': pic,
