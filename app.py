@@ -453,6 +453,7 @@ def get_countries():
 @app.route('/getRelCountry', methods=['POST'])
 def get_rel_country():
     star = mongo.db.articles
+    star_star = mongo.db.Spec_Countries_News
     output = []
     articles = []
     if not request.json or not 'code' in request.json:
@@ -487,6 +488,18 @@ def get_rel_country():
             return jsonify(output)
         else:
             output.append({'url': url,
+                           'title': title,
+                           'pic': pic,
+                           'id': id,
+                           'date': date,
+                           'tag': tag,
+                           'tagu': tagu,
+                           'keywords': keywords,
+                           'category': category,
+                           'score': score,
+                           'len': len(s['keywords'])
+                           })
+            star_star.insert_one({'url': url,
                            'title': title,
                            'pic': pic,
                            'id': id,
