@@ -497,6 +497,8 @@ def get_rel_country():
         category = s['categorie']
         score = s['score']
         id = str(s['_id'])
+        if category is None:
+            print("This has no category") 
         if not country_name_key:
             return jsonify(output)
         else:
@@ -512,8 +514,7 @@ def get_rel_country():
                            'score': score,
                            'len': len(s['keywords'])
                            })
-            star_star.update(
-                           {'title': title},
+            star_star.insert_one(
                            {'url': url,
                            'title': title,
                            'pic': pic,
@@ -523,10 +524,8 @@ def get_rel_country():
                            'tagu': tagu,
                            'country': country_name_key,
                            'category': category,
-                           'score': score,
-                           'len': len(s['keywords'])
-                           },
-                           upsert = True
+                           'score': score
+                           }
                            )
     return jsonify(output)
 
