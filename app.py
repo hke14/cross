@@ -499,38 +499,38 @@ def get_rel_country():
         score = s['score']
         id = str(s['_id'])
         categories = ['media', 'world', 'tech', 'sport', 'business']
-        if not category:
+        if not tag:
             secure_random = random.SystemRandom()
             category = secure_random.choice(categories)
             print("There is a new category now: "+category) 
         if not country_name_key:
             return jsonify(output)
         else:
-            output.append({'url': url,
-                           'title': title,
-                           'pic': pic,
-                           'id': id,
-                           'date': date,
-                           'tag': tag,
-                           'tagu': tagu,
-                           'keywords': keywords,
-                           'category': category,
-                           'score': score,
-                           'len': len(s['keywords'])
-                           })
-            star_star.insert_one(
-                           {'url': url,
-                           'title': title,
-                           'pic': pic,
-                           'id': id,
-                           'date': date,
-                           'tag': tag,
-                           'tagu': tagu,
-                           'country': country_name_key,
-                           'category': category,
-                           'score': score
-                           }
-                           )
+            #output.append({'url': url,
+            #               'title': title,
+            #               'pic': pic,
+            #               'id': id,
+            #               'date': date,
+            #               'tag': tag,
+            #               'tagu': tagu,
+            #               'keywords': keywords,
+            #               'category': category,
+            #               'score': score,
+            #               'len': len(s['keywords'])
+            #               })
+            #star_star.insert_one(
+            #               {'url': url,
+            #               'title': title,
+            #               'pic': pic,
+            #               'id': id,
+            #               'date': date,
+            #               'tag': tag,
+            #               'tagu': tagu,
+            #               'country': country_name_key,
+            #               'category': category,
+            #               'score': score
+            #               }
+            #               )
     return jsonify(output)
 
 
