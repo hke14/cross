@@ -4,6 +4,7 @@
 import json
 import time
 import pymongo
+import random
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -497,8 +498,11 @@ def get_rel_country():
         category = s['categorie']
         score = s['score']
         id = str(s['_id'])
+        categories = ['media', 'world', 'tech', 'sport', 'business']
         if not category:
-            print("This has no category") 
+            secure_random = random.SystemRandom()
+            category = secure_random.choice(categories)
+            print("There is a new category now: "+category) 
         if not country_name_key:
             return jsonify(output)
         else:
