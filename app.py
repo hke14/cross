@@ -497,7 +497,7 @@ def get_rel_country():
         category = s['categorie']
         score = s['score']
         id = str(s['_id'])
-        if category is None:
+        if not category:
             print("This has no category") 
         if not country_name_key:
             return jsonify(output)
@@ -527,7 +527,7 @@ def get_rel_country():
                            'score': score
                            }
                            )
-    return jsonify(output)
+    #return jsonify(output)
 
 
 
