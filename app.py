@@ -527,7 +527,7 @@ def get_rel_country():
                            'score': score
                            }
                            )
-    #return jsonify(output)
+    return jsonify(output)
 
 
 
