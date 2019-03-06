@@ -506,18 +506,18 @@ def get_rel_country():
         if not country_name_key:
             return jsonify(output)
         else:
-            #output.append({'url': url,
-            #               'title': title,
-            #               'pic': pic,
-            #               'id': id,
-            #               'date': date,
-            #               'tag': tag,
-            #               'tagu': tagu,
-            #               'keywords': keywords,
-            #               'category': category,
-            #               'score': score,
-            #               'len': len(s['keywords'])
-            #               })
+            output.append({'url': url,
+                           'title': title,
+                           'pic': pic,
+                           'id': id,
+                           'date': date,
+                           'tag': tag,
+                           'tagu': tagu,
+                           'keywords': keywords,
+                           'category': category,
+                           'score': score,
+                           'len': len(s['keywords'])
+                           })
             #star_star.insert_one(
             #               {'url': url,
             #               'title': title,
